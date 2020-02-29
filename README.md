@@ -5,6 +5,12 @@ using [TMC2209](https://learn.watterott.com/silentstepstick/comparison/) stepper
 
 Stock extruder was exchanged for a [pancake stepper](https://smile.amazon.de/gp/product/B07JJCMB81). The powerfull stock extruder stepper is reused as Y-stepper in this firmware.
 
+---
+
+⚠️ Sensorless homing is activated. Therefore the jumpers on the mainboard must be set connecting the DIAG PINs of X and Y to X_MIN and Y_MIN and the XY endstop cables must be unplugged and maybe the sensitivity must be tuned for your stepper setup with [M914](https://marlinfw.org/docs/gcode/M914.html) ⚠️
+
+---
+
 ⚠️ DO NOT USE WITH THE STOCK OR UPGRADE MAINBOARD PROVIDED BY SOVOL ⚠️
 
 ## Features
@@ -15,7 +21,7 @@ Stock extruder was exchanged for a [pancake stepper](https://smile.amazon.de/gp/
 - Active [Linear Advance v1.5](http://marlinfw.org/docs/features/lin_advance.html) (Has to be calibrated individually)
 - Active [Junction Deviation](https://reprap.org/forum/read.php?1,739819) (Has to be calibrated individually)
 - Active [S-Curve Acceleration](https://github.com/synthetos/TinyG/wiki/Jerk-Controlled-Motion-Explained)
-- Quick Home moves both X and Y initially for faster homing
+- <s>Quick Home moves both X and Y initially for faster homing</s> ([Disabled because of issues with sensorless homing](https://github.com/MarlinFirmware/Marlin/issues/14400))
 - Home X, Y, and Z individually via menu if you want
 - Enabled Advanced Pause feature for filament changes during print e.g. with [M600](http://marlinfw.org/docs/gcode/M600.html)
 - Optimized XY NOZZLE_TO_PROBE offset for accurate probing
